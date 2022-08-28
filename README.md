@@ -2,7 +2,7 @@
 
 git 練習用
 
-- fork  
+- clone
 - commit  
 - push  
 - pull
