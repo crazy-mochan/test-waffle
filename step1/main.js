@@ -15,6 +15,7 @@ const hiddenValidationMessage = () => {
         );
     }
 }
+/*submit に付与するイベント*/
 const addEventWithSubmitButton = () => {
 
     let submit = document.getElementById('submit-button');
