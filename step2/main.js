@@ -1,5 +1,3 @@
-
-
 //デフォルトのバリデーションメッセージを使用せず
 // カスタムしたメッセージを使用する
 const validateMessage = () => {
@@ -11,7 +9,6 @@ const validateMessage = () => {
     }
     for (let i = 0; i < invalids.length; i++) {
         if (invalids[i] == undefined) {
-            //showValidateMessage(invalids[i], false);
             continue;
         }
         invalids[i].addEventListener(
