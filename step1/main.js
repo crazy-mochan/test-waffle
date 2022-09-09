@@ -5,12 +5,13 @@ const addEventWithSubmitButton = () => {
 
     submit.addEventListener(
         'click',
-        () => {
+        (e) => {
             let form = document.getElementById('form-body');
             let invalids = form.querySelectorAll(':invalid');
             e.preventDefault();
             let invalid;
             for (let i = 0; i < invalids.length; i++) {
+                console.log(invalid);
                 invalid = invalids[i];
                 invalid.addEventListener(
                     'change',
@@ -25,7 +26,7 @@ const addEventWithSubmitButton = () => {
 
 window.addEventListener(
     'load',
-    () => {
+    (e) => {
         addEventWithSubmitButton();
     }
 );
