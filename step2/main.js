@@ -7,26 +7,23 @@ const initialize = () => {
         }
     );
 }
-const showValidateMessage = () => {
+const showValidateMessage = (index) => {
     let messages = document.getElementsByClassName('error-message');
-    let valids =
-    messages.foreach(
-        (message) => {
-
-        }
-    );
+    messages[index].style.display = 'block';
 }
 
-//デフォルトのバリデーションメッセージを使用しない
+//デフォルトのバリデーションメッセージを使用せず
+// カスタムしたメッセージを使用する
 const validateMessage = () => {
     let form = document.getElementById('form-body');
     let invalids = form.querySelectorAll(':invalid');
+
     if (invalids.length < 1) {
         return false;
     }
 
     invalids.foreach(
-        (invalid) => {
+        (invalid, index) => {
             if (!invalid) {
                 return;
             }
@@ -34,14 +31,12 @@ const validateMessage = () => {
                 'change',
                 function f() {
                     this.removeEventListener('change', f);
+                    showValidateMessage(index);
                 }
             );
         }
     );
-    for (let i = 0; i < invalids.length; i++) {
-        console.log(invalids[i]);
 
-    }
     return true;
 }
 
