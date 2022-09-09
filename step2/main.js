@@ -22,6 +22,7 @@ const validateMessage = () => {
     return true;
 }
 
+
 const showDialog = (message) => {
     window.alert(message);
 }
