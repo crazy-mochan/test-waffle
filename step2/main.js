@@ -54,6 +54,7 @@ const addEventWithSubmitButton = () => {
 window.addEventListener(
     'load',
     (e) => {
+        initialize();
         addEventWithSubmitButton();
     }
 );
