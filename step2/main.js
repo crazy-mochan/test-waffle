@@ -14,13 +14,9 @@ const validateMessage = () => {
         invalids[i].addEventListener(
             'change',
             function f() {
-
                 this.removeEventListener('change', f);
-
             }
         );
-
-
     }
 
     return true;
