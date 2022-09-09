@@ -1,4 +1,4 @@
-
+//デフォルトのバリデーションメッセージを非表示にする
 const addEventWithSubmitButton = () => {
 
     let submit = document.getElementById('submit-button');
