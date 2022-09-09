@@ -1,0 +1,24 @@
+body {
+    background-color: #f7fcff;
+}
+.contact-form {
+    margin: 10%;
+}
+
+h1 {
+    margin-left: 1%
+}
+
+input:invalid {
+    border: solid 1px red;
+}
+
+input:invalid + .error-message {
+    display: block;
+}
+
+.error-message {
+    margin-top: -18px;
+    color: red;
+    display: none;
+}
