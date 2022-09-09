@@ -2,9 +2,14 @@
 const validateMessage = () => {
     let form = document.getElementById('form-body');
     let invalids = form.querySelectorAll(':invalid');
-
+    if (invalids.length < 1) {
+        return false;
+    }
     for (let i = 0; i < invalids.length; i++) {
-        //console.log(invalid[i]);
+        console.log(invalids[i]);
+        if (!invalids[i]) {
+            continue;
+        }
         invalids[i].addEventListener(
             'change',
             function f() {
@@ -12,6 +17,11 @@ const validateMessage = () => {
             }
         );
     }
+    return true;
+}
+
+const showDialog = (message) => {
+    window.alert(message);
 }
 /*submit に付与するイベント*/
 const addEventWithSubmitButton = () => {
@@ -22,7 +32,12 @@ const addEventWithSubmitButton = () => {
         'click',
         (e) => {
             e.preventDefault();
-            hiddenValidationMessage();
+            if (validateMessage() == false) {
+                showDialog('送信しました！');
+                return;
+            }
+            validateMessage();
+            
         }
     )
 }
