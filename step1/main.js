@@ -1,4 +1,20 @@
 //デフォルトのバリデーションメッセージを非表示にする
+const hiddenValidationMessage = () => {
+    let form = document.getElementById('form-body');
+    let invalids = form.querySelectorAll(':invalid');
+
+    let invalid;
+    for (let i = 0; i < invalids.length; i++) {
+        console.log(invalid);
+        invalid = invalids[i];
+        invalid.addEventListener(
+            'change',
+            function f() {
+                this.removeEventListener('change', f);
+            }
+        );
+    }
+}
 const addEventWithSubmitButton = () => {
 
     let submit = document.getElementById('submit-button');
@@ -6,23 +22,12 @@ const addEventWithSubmitButton = () => {
     submit.addEventListener(
         'click',
         (e) => {
-            let form = document.getElementById('form-body');
-            let invalids = form.querySelectorAll(':invalid');
             e.preventDefault();
-            let invalid;
-            for (let i = 0; i < invalids.length; i++) {
-                console.log(invalid);
-                invalid = invalids[i];
-                invalid.addEventListener(
-                    'change',
-                    function f() {
-                        this.removeEventListener('change', f);
-                    }
-                );
-            }
+            hiddenValidationMessage();
         }
     )
 }
+
 
 window.addEventListener(
     'load',
