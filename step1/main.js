@@ -17,7 +17,7 @@ const validateMessage = () => {
 const addEventWithSubmitButton = () => {
 
     let submit = document.getElementById('submit-button');
-    
+
     submit.addEventListener(
         'click',
         (e) => {
@@ -26,7 +26,6 @@ const addEventWithSubmitButton = () => {
         }
     )
 }
-
 
 window.addEventListener(
     'load',
