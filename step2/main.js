@@ -1,15 +1,19 @@
 //デフォルトのバリデーションメッセージを非表示にする
 const initialize = () => {
     let messages = document.getElementsByClassName('error-message');
-    messages = Array.from(messages);
-    console.log(Array.isArray(messages));
-    for (let i = 0; i < messaeges; i++) {
+
+    for (let i = 0; i < messages.length; i++) {
         messages[i].style.display = 'none';
     }
 }
-const showValidateMessage = (index) => {
+const showValidateMessage = (invalidObject) => {
     let messages = document.getElementsByClassName('error-message');
-    messages[index].style.display = 'block';
+
+    let invalids = Array.prototype.slice.call(form.querySelectorAll(':invalid'));
+    let invalidIndex = invalids.indexOf(invalidObject);
+    console.log(invalids);
+
+    messages[invalidIndex].style.display = 'block';
 }
 
 //デフォルトのバリデーションメッセージを使用せず
@@ -17,26 +21,25 @@ const showValidateMessage = (index) => {
 const validateMessage = () => {
     let form = document.getElementById('form-body');
     let invalids = form.querySelectorAll(':invalid');
-
+    console.log("validateMessage");
     if (invalids.length < 1) {
         return false;
     }
     let invalidsIndex;
-    invalids.foreach(
-        (invalid) => {
-            if (!invalid) {
-                return;
-            }
-            invalid.addEventListener(
-                'change',
-                function f() {
-                    this.removeEventListener('change', f);
-                    invalidsIndex = invalids.indexOf(this);
-                    showValidateMessage(invalidsIndex);
-                }
-            );
+    for (let i = 0; i < invalids.length; i++) {
+        console.log(invalids[i]);
+        if (!invalids[i]) {
+            continue;
         }
-    );
+        invalids[i].addEventListener(
+            'change',
+            function f() {
+                showValidateMessage(invalids[i]);
+                this.removeEventListener('change', f);
+
+            }
+        );
+    }
 
     return true;
 }
@@ -57,10 +60,8 @@ const addEventWithSubmitButton = () => {
                 showDialog('送信しました！');
                 return;
             }
-            validateMessage();
-
         }
-    )
+    );
 }
 
 window.addEventListener(
