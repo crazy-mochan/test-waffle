@@ -1,8 +1,8 @@
 //デフォルトのバリデーションメッセージを非表示にする
 const initialize = () => {
-    
-}
 
+}
+//デフォルトのバリデーションメッセージを使用しない
 const validateMessage = () => {
     let form = document.getElementById('form-body');
     let invalids = form.querySelectorAll(':invalid');
