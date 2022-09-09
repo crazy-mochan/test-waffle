@@ -1,3 +1,7 @@
+.contact-form {
+    margin: 10%;
+}
+
 h1 {
     margin-left: 1%
 }
@@ -6,7 +10,12 @@ input:invalid:focus {
     border: solid 1px red;
 }
 
+input:invalid + .error-message {
+    display: block;
+}
+
 .error-message {
     margin-top: -18px;
     color: red;
+    display: none;
 }
