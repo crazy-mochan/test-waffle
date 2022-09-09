@@ -5,3 +5,8 @@ h1 {
 input:invalid:focus {
     border: solid 1px red;
 }
+
+.error-message {
+    margin-top: -18px;
+    color: red;
+}
