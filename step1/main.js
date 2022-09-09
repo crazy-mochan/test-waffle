@@ -5,9 +5,8 @@ const hiddenValidationMessage = () => {
 
     let invalid;
     for (let i = 0; i < invalids.length; i++) {
-        //console.log(invalid);
-        invalid = invalids[i];
-        invalid.addEventListener(
+        //console.log(invalid[i]);
+        invalids[i].addEventListener(
             'change',
             function f() {
                 this.removeEventListener('change', f);
