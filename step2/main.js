@@ -6,14 +6,13 @@ const initialize = () => {
         messages[i].style.display = 'none';
     }
 }
-const showValidateMessage = (invalidObject) => {
+const showValidateMessage = (invalidObject, isShow) => {
     let messages = document.getElementsByClassName('error-message');
-
+    let form = document.getElementById('form-body');
     let invalids = Array.prototype.slice.call(form.querySelectorAll(':invalid'));
     let invalidIndex = invalids.indexOf(invalidObject);
-    console.log(invalids);
 
-    messages[invalidIndex].style.display = 'block';
+    messages[invalidIndex].style.display = isShow ? 'block' : 'none';
 }
 
 //デフォルトのバリデーションメッセージを使用せず
@@ -25,20 +24,21 @@ const validateMessage = () => {
     if (invalids.length < 1) {
         return false;
     }
-    let invalidsIndex;
     for (let i = 0; i < invalids.length; i++) {
         console.log(invalids[i]);
         if (!invalids[i]) {
+            showValidateMessage(invalids[i], false);
             continue;
         }
         invalids[i].addEventListener(
             'change',
             function f() {
-                showValidateMessage(invalids[i]);
+
                 this.removeEventListener('change', f);
 
             }
         );
+        showValidateMessage(invalids[i], true);
     }
 
     return true;
