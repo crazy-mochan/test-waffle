@@ -9,14 +9,9 @@ h1 {
     margin-left: 1%
 }
 
-input:invalid + .error-message {
-    display: block;
-}
-
 .error-message {
     margin-top: -18px;
     color: red;
-    display: none;
 }
 
 #comment {

@@ -1,6 +1,11 @@
 //デフォルトのバリデーションメッセージを非表示にする
 const initialize = () => {
-
+    let messages = document.getElementsByClassName('error-message');
+    messages.foreach(
+        (message) => {
+            message.style.display = 'none';
+        }
+    );
 }
 //デフォルトのバリデーションメッセージを使用しない
 const validateMessage = () => {
