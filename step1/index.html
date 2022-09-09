@@ -20,19 +20,16 @@
         <form>
             <fieldset>
                 <label for="name">name</label>
-                <input type="text" placeholder="ndj" id="name">
+                <input type="text" placeholder="ndj" id="name" required>
                 <label for="tel">phone number</label>
                 <input type="tel" placeholder="090-0000-0000" id="tel" pattern="\d{2,4}-?\d{3,4}-?\d{3,4}">
                 <label for="email">email</label>
                 <input type="email" placeholder="something@example.com" id="email" >
 
 
-                <label for="commentField">Comment</label>
-                <textarea placeholder="Hi CJ …" id="commentField"></textarea>
-                <div class="float-right">
-                  <input type="checkbox" id="confirmField">
-                  <label class="label-inline" for="confirmField">Send a copy to yourself</label>
-                </div>
+                <label for="comment">Comment</label>
+                <textarea placeholder="coco ni kaite" id="comment"></textarea>
+                
                 <input class="button-primary" type="submit" value="Send">
             </fieldset>
         </form>
