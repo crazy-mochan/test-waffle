@@ -19,17 +19,14 @@
     <div>
         <form>
             <fieldset>
-                <label for="name">name</label>
+                <label for="name">name*</label>
                 <input type="text" placeholder="ndj" id="name" required>
-                <label for="tel">phone number</label>
-                <input type="tel" placeholder="090-0000-0000" id="tel" pattern="\d{2,4}-?\d{3,4}-?\d{3,4}">
-                <label for="email">email</label>
-                <input type="email" placeholder="something@example.com" id="email" >
-
-
+                <label for="tel">phone number*</label>
+                <input type="tel" placeholder="090-0000-0000" id="tel" pattern="\d{2,4}-?\d{3,4}-?\d{3,4}" required>
+                <label for="email">email*</label>
+                <input type="email" placeholder="something@example.com" id="email" required>
                 <label for="comment">Comment</label>
                 <textarea placeholder="coco ni kaite" id="comment"></textarea>
-                
                 <input class="button-primary" type="submit" value="Send">
             </fieldset>
         </form>
