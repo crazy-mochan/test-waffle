@@ -1,4 +1,8 @@
 //デフォルトのバリデーションメッセージを非表示にする
+const initialize = () => {
+    
+}
+
 const validateMessage = () => {
     let form = document.getElementById('form-body');
     let invalids = form.querySelectorAll(':invalid');
@@ -37,7 +41,7 @@ const addEventWithSubmitButton = () => {
                 return;
             }
             validateMessage();
-            
+
         }
     )
 }

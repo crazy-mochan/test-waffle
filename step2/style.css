@@ -9,10 +9,6 @@ h1 {
     margin-left: 1%
 }
 
-input:invalid {
-    border: solid 1px red;
-}
-
 input:invalid + .error-message {
     display: block;
 }
