@@ -2,8 +2,7 @@
 const validateMessage = () => {
     let form = document.getElementById('form-body');
     let invalids = form.querySelectorAll(':invalid');
-    
-    let invalid;
+
     for (let i = 0; i < invalids.length; i++) {
         //console.log(invalid[i]);
         invalids[i].addEventListener(
@@ -18,7 +17,7 @@ const validateMessage = () => {
 const addEventWithSubmitButton = () => {
 
     let submit = document.getElementById('submit-button');
-
+    
     submit.addEventListener(
         'click',
         (e) => {
