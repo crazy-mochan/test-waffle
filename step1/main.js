@@ -1,8 +1,8 @@
 //デフォルトのバリデーションメッセージを非表示にする
-const hiddenValidationMessage = () => {
+const validateMessage = () => {
     let form = document.getElementById('form-body');
     let invalids = form.querySelectorAll(':invalid');
-
+    
     let invalid;
     for (let i = 0; i < invalids.length; i++) {
         //console.log(invalid[i]);
