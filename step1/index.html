@@ -13,8 +13,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>github hands on</h1>
+    <h1>git hands on</h1>
 
-    <h2></h2>
+    <h2>お問い合わせ</h2>
+    <div>
+        <form>
+            <fieldset>
+                <label for="name">name</label>
+                <input type="text" placeholder="ndj" id="name">
+                <label for="tel">phone number</label>
+                <input type="tel" placeholder="090-0000-0000" id="tel" pattern="\d{2,4}-?\d{3,4}-?\d{3,4}">
+                <label for="email">email</label>
+                <input type="email" placeholder="something@example.com" id="email" >
+
+
+                <label for="commentField">Comment</label>
+                <textarea placeholder="Hi CJ …" id="commentField"></textarea>
+                <div class="float-right">
+                  <input type="checkbox" id="confirmField">
+                  <label class="label-inline" for="confirmField">Send a copy to yourself</label>
+                </div>
+                <input class="button-primary" type="submit" value="Send">
+            </fieldset>
+        </form>
+    </div>
+
 </body>
 </html>
