@@ -1,7 +1,9 @@
 //デフォルトのバリデーションメッセージを非表示にする
 const initialize = () => {
     let messages = document.getElementsByClassName('error-message');
-    messages.foreach(
+    console.log(messages);
+    Array.prototype.forEach.call(
+        messages,
         (message) => {
             message.style.display = 'none';
         }
@@ -21,9 +23,10 @@ const validateMessage = () => {
     if (invalids.length < 1) {
         return false;
     }
-
-    invalids.foreach(
-        (invalid, index) => {
+    let invalidsIndex;
+    Array.prototype.forEach.call(
+        invalids,
+        (invalid) => {
             if (!invalid) {
                 return;
             }
@@ -31,7 +34,8 @@ const validateMessage = () => {
                 'change',
                 function f() {
                     this.removeEventListener('change', f);
-                    showValidateMessage(index);
+                    invalidsIndex = invalids.indexOf(this);
+                    showValidateMessage(invalidsIndex);
                 }
             );
         }
