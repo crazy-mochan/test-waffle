@@ -36,7 +36,7 @@ const addEventWithSubmitButton = () => {
         (e) => {
             e.preventDefault();
             if (validateMessage() == false) {
-                showDialog('送信！');
+                showDialog('送信したよ！');
                 return;
             }
         }
