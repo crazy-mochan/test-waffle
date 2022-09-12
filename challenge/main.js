@@ -1,10 +1,16 @@
-//デフォルトのバリデーションメッセージを非表示にする
+//デフォルトのバリデーションメッセージを使用せず
+// カスタムしたメッセージを使用する
 const validateMessage = () => {
     let form = document.getElementById('form-body');
     let invalids = form.querySelectorAll(':invalid');
-
+    console.log("validateMessage");
+    if (invalids.length < 1) {
+        return false;
+    }
     for (let i = 0; i < invalids.length; i++) {
-        //console.log(invalid[i]);
+        if (invalids[i] == undefined) {
+            continue;
+        }
         invalids[i].addEventListener(
             'change',
             function f() {
@@ -12,6 +18,13 @@ const validateMessage = () => {
             }
         );
     }
+
+    return true;
+}
+
+
+const showDialog = (message) => {
+    window.alert(message);
 }
 /*submit に付与するイベント*/
 const addEventWithSubmitButton = () => {
@@ -22,9 +35,12 @@ const addEventWithSubmitButton = () => {
         'click',
         (e) => {
             e.preventDefault();
-            hiddenValidationMessage();
+            if (validateMessage() == false) {
+                showDialog('送信しました！');
+                return;
+            }
         }
-    )
+    );
 }
 
 window.addEventListener(
